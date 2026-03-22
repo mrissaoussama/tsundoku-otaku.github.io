@@ -6,10 +6,10 @@ description: How custom CSS/JS snippets work in the novel reader.
 
 # Novel reader snippets
 
-This guide explains how custom CSS and JavaScript snippets behave in the **Novel WebView reader**:
+How custom CSS and JavaScript snippets behave in the **Novel WebView reader**:
 
-- where snippets are applied,
-- which rules win when multiple styles/scripts exist,
+- Where snippets are applied
+- Which rules win when multiple styles/scripts exist
 
 ## Before you start
 
@@ -20,23 +20,24 @@ Snippets are intended for the **WebView novel renderer**.
 3. Set rendering mode to **WebView**.
 4. Go to **Advanced** and use the CSS/JS snippet sections.
 
-If you use the TextView renderer, WebView snippets do not run.
+If you use the TextView renderer, WebView snippets do not run.  
+This is a function of the native android TextView, and will not be changed.
 
 ## Execution order
 
 For a normal chapter load, the order is:
 
 1. **Chapter preprocessing (native Kotlin):**
-   - optional hide chapter title
-   - optional force lowercase
-   - optional translation
+   - Hide chapter title option
+   - Force lowercase option
+   - Translation option
 2. **Content sanitization:**
-   - strips chapter-inline `<script>`, `<style>`, and `<noscript>` blocks
-   - optional media stripping
-   - applies enabled **Regex Find/Replace** rules
+   - Strips chapter-inline `<script>`, `<style>`, and `<noscript>` blocks
+   - Media stripping option
+   - Applies enabled **Regex Find/Replace** rules
 3. **EPUB extraction (if enabled):**
-   - if `Enable EPUB CSS` is on, `<style data-epub-css>` is moved into the document `<head>`
-   - if `Enable EPUB JS` is on, `<script data-epub-js>` is moved into the document `<head>`
+   - If `Enable EPUB CSS` is on, `<style data-epub-css>` is moved into the document `<head>`
+   - If `Enable EPUB JS` is on, `<script data-epub-js>` is moved into the document `<head>`
 4. **Initial HTML is loaded into WebView** (with base style + extracted EPUB head content + `window.__TSUNDOKU_*` variables).
 5. **After page finished (`onPageFinished`) the app injects in this order:**
    - Reader settings CSS/JS
