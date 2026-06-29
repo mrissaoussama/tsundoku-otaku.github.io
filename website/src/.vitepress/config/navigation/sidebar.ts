@@ -130,7 +130,7 @@ function defaultSidebar(): DefaultTheme.SidebarItem[] {
           text: 'Novel reader snippets',
           link: '/docs/guides/novel-reader-snippets',
         },
-        {
+
         {
           text: 'Custom sources',
           link: '/docs/guides/custom-source',
