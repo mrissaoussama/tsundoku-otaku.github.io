@@ -128,6 +128,7 @@ function defaultSidebar(): DefaultTheme.SidebarItem[] {
         },
         {
           text: 'Novel reader snippets',
+          text: 'Novel reader (Advanced)',
           link: '/docs/guides/novel-reader-snippets',
         },
         {
