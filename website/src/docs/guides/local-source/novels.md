@@ -13,9 +13,38 @@ This explains how to import local novels, including EPUB volumes, and keep chapt
 This page explores some advanced features.
 :::
 
+## Importing EPUBs with the import screen
+
+The easiest way to add EPUBs is the in-app import screen, which previews and organizes files before importing. You do not have to place files manually.
+
+Open it from the **Library** overflow menu (**Import EPUB**), or send an EPUB to Tsundoku from another app.
+
+### Opening EPUBs from another app
+
+From a file manager, browser, or any app, use **Share** or **Open with → Tsundoku** on an `.epub` file. It opens straight in the import screen.
+
+### Novel groups and volumes
+
+Selected files are parsed and grouped into **novel groups**. Each group becomes one novel. The files inside it are its **volumes**. The app guesses the grouping and order from EPUB metadata and filenames.
+
+For each group you can:
+
+- Edit the **novel title**.
+- **Reorder volumes** inside a group with the up/down arrows.
+- Edit a **volume title** (shown only when a group has more than one volume).
+- **Switch a volume** to another group, or to a new group, with the move (folder) menu.
+- **Remove** a volume or a whole group.
+- Expand a volume to preview its metadata and table of contents.
+
+A group with more than one volume is imported as a single combined novel. The volumes keep their order.
+
+Use **Auto rename & organize** in the top bar to re-group and rename everything from EPUB metadata again.
+
+At the bottom, there is the option to **Add to library automatically** with a **category** picker. Otherwise, the imported EPUBs will be found in the Local Novels option in Browse tab.
+
 ## Base Folder
 
-Set your local novels base folder in the app and place one folder per novel:
+If you prefer a manual import or want to use other formats, set your local novels base folder in the app and place one folder per novel:
 
 ```text
 LocalNovels/
@@ -23,13 +52,14 @@ LocalNovels/
     ...chapter files or folders...
 ```
 
-`My Novel Title` becomes the novel title shown in the app.
+`My Novel Title` becomes the novel title shown in the app. Be careful not to rename this after adding this to your library, as the title is used to find the corresponding folder.
 
 ## Supported Chapter Formats
 
 The local novel source accepts these chapter formats:
 
 - Plain text: `.txt`, `.text`
+- Markdown: `.md`
 - HTML: `.html`, `.htm`, `.xhtml`
 - EPUB: `.epub`
 - ZIP archives: `.zip`, `.cbz`
@@ -159,6 +189,26 @@ or
 ```
 
 Avoid unnumbered names like only `Part A.epub`, `Part B.epub` unless lexical order is intended.
+
+## Exporting novels to EPUB
+
+You can export a novel back out to an EPUB file.
+
+- **Single novel** - open the novel, select chapters, and choose **Export EPUB**.
+- **Multiple novels** - select novels in the library and use the batch **Export EPUB** action.
+
+In the export dialog you can set the filename and choose:
+
+- **Downloaded only**, or pull from the source.
+- **Join volumes** into one file, or keep them separate (produces a zip).
+- **Translation mode**: original, translated, or both (both produces a zip with two files).
+- **Filename options**: include chapter count, chapter range, status, or volume number.
+- **Include custom CSS / JS**: from your active snippets.
+
+## Managing local novels
+With the select feature in browse Local novels, you can:
+- **Delete** - remove a local novel (and its files).
+- **Refresh Covers**
 
 ## Metadata Notes
 
