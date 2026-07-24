@@ -127,15 +127,14 @@ function defaultSidebar(): DefaultTheme.SidebarItem[] {
           link: '/docs/guides/reader-settings',
         },
         {
-          text: 'Novel reader snippets',
           text: 'Novel reader (Advanced)',
           link: '/docs/guides/novel-reader-snippets',
         },
-
         {
           text: 'Custom sources',
           link: '/docs/guides/custom-source',
         },
+        {
           text: 'Shizuku',
           link: '/docs/guides/shizuku',
         },
